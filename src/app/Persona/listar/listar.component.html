@@ -1,25 +1,32 @@
 <div class="container">
     <!--formulario-->
     <form  autocomplete="off" [formGroup]="formFilter" novalidate>   
-    <div class="col-md-6 mt-4">
-       
-        <div class="input-group mb-3  w-min ">
-            <button class="btn btn-outline-info " type="button" id="button-addon1" (click)="filterEspecialidad()">Buscar</button>
+    <div class="col-md-6 mt-4">       
+        <div class="input-group mb-3  w-min ">           
+            <button class="btn btn-primary " routerLink="/">Home</button> 
             <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                 aria-describedby="button-addon1"    formControlName="especialidad">
+            <button class="btn btn-outline-info " type="button" id="button-addon1" (click)="filterEspecialidad()">Buscar por Especialidad</button>                      
+        </div> 
+        <div class="input-group mb-3  w-min ">
             <button class="btn btn-primary " routerLink="/">Home</button>
-                
+            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                aria-describedby="button-addon1"    formControlName="nombre">
+            <button class="btn btn-outline-info " type="button" id="button-addon1" (click)="filterNombre()">Buscar por Nombre</button>                         
+        </div>   
+        <div class="input-group mb-3  w-min ">
+            <button class="btn btn-outline-secondary " type="button" id="button-addon1" (click)="exportarPdf()">Exportar Pdf</button>                         
         </div>    
     </div>
     </form>
     <!--Tabla-->
-    <div id="pdf" class="card">
+    <div  class="card mb-4" id="pdf">
        
         <div class="card-header" >
             <h3>Alumnos pre-inscriptos</h3>
         </div>
-        <div class="card-body">
-            <table class="table table-hover">
+        <div  class="card-body">
+            <table class="table table-hover" >
                 <thead>
                     <tr class="text-center">
                        
@@ -45,7 +52,7 @@
                         <td>{{persona.especialidad}}</td>
                       
                         <td>
-                            <i style="font-size:20px ; color: brown;" class="bi bi-trash"(click)="eliminarAlumno(persona.id)" ></i>
+                            <i style="font-size:20px ; color: brown; cursor: pointer;"  class="bi bi-trash"(click)="eliminarAlumno(persona.id)" ></i>                                                   
                         </td>
 
                     </tr>

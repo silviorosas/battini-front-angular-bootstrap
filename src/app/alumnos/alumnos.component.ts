@@ -30,7 +30,7 @@ export class AlumnosComponent implements OnInit {
       
   //Metodo 2 save
   crearAlumno() {
-    this.service.save(this.formFilter.value).subscribe(
+  /*   this.service.save(this.formFilter.value).subscribe(
       res => {
         Swal.fire({
           position: 'center',
@@ -53,9 +53,9 @@ export class AlumnosComponent implements OnInit {
       this.formFilter.reset()
       console.log(this.datos);
     }   
-
+ */
   }
-
+ 
 
     
   constructor(private fb: FormBuilder, private service:ServiceService) { }
