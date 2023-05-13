@@ -4,12 +4,12 @@
 
 export const environment = {
   firebase: {
-    projectId: 'escuela-battini',
-    appId: '1:752032120525:web:2a02c1718ab24830ed7384',
-    storageBucket: 'escuela-battini.appspot.com',
-    apiKey: 'AIzaSyDC3NxnC8LcqdR3d6pYk1UwugxLxDDhDZk',
-    authDomain: 'escuela-battini.firebaseapp.com',
-    messagingSenderId: '752032120525',
+    projectId: 'battini-front',
+    appId: '1:40515410297:web:b2369767427e3f19b7f7a8',
+    storageBucket: 'battini-front.appspot.com',
+    apiKey: 'AIzaSyDc85YgGhdi1ycUmbifNTIZAm58QSqo83w',
+    authDomain: 'battini-front.firebaseapp.com',
+    messagingSenderId: '40515410297',
   },
   production: false
 };
