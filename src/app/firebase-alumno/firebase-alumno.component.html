@@ -84,8 +84,11 @@
         <img src="assets/img/llaves.jpg" alt="desarrollo"   width="180" height="160">
 
         <div>
-            <h3 class="fs-5 mt-4 px-4 pb-1">Mecánica</h3>
-            <p class="px-4">Turno tarde de 14 a 18 hs.<br> Turno noche de 20 a 23 hs.</p>
+            <h3 class="fs-5 mt-0 px-4 pb-1">Mecánica</h3>
+            <p class="px-4">Turno tarde de 14 a 18 hs.
+            <br><strong style="background-color: rgb(239, 232, 82);">Inscripción abierta para<br>
+                        turno noche de 20 a 23 hs.</strong>
+            </p>
            <a href="#seccion-contacto"><button type="button" class="btn btn-info btn-sm" style="margin-left: 10%;"
              >Pre-Inscribirse</button></a>
         </div>
@@ -120,8 +123,12 @@
         <img src="assets/img/plomero.jpg" alt="seo" width="180" height="160" >
 
         <div>
-            <h3 class="fs-5 mt-4 px-4 pb-1">Instalaciones Sanitarias</h3>
-            <p class="px-4">Turno noche de 20 a 23 hs.</p>
+            <h3 class="fs-5 mt-0 px-4 pb-1">Instalaciones Sanitarias y Gas</h3>
+            <p class="px-4">
+              Turno noche de 20 a 23 hs.
+              <br><strong style="background-color: rgb(239, 232, 82);">Inscripción abierta.<br>
+                  </strong>             
+            </p>
               <a href="#seccion-contacto"><button type="button" class="btn btn-info btn-sm" style="margin-left: 10%;"
              >Pre-Inscribirse</button></a>
         </div>
@@ -131,7 +138,9 @@
 
       <div>
           <h3 class="fs-5 mt-4 px-4 pb-1">Montador Electricista</h3>
-          <p class="px-4">Turno noche de 20 a 23 hs.</p>
+          <p class="px-4">Turno noche de 20 a 23 hs.
+            <br><strong style="background-color: rgb(239, 232, 82);">Inscripción abierta.</strong>
+          </p>
             <a href="#seccion-contacto"><button type="button" class="btn btn-info btn-sm" style="margin-left: 10%;"
              >Pre-Inscribirse</button></a>
       </div>
@@ -141,7 +150,9 @@
 
       <div>
           <h3 class="fs-5 mt-4 px-4 pb-1">Electricidad del Automotor</h3>
-          <p class="px-4">Turno noche de 20 a 23 hs.</p>
+          <p class="px-4">Turno noche de 20 a 23 hs.
+            <br><strong style="background-color: rgb(239, 232, 82);">Inscripción abierta.</strong>
+          </p>
             <a href="#seccion-contacto"><button type="button" class="btn btn-info btn-sm" style="margin-left: 10%;"
              >Pre-Inscribirse</button></a>
       </div>
@@ -180,19 +191,31 @@
 </div>
 <div class="wrapper-local">
   <h2>Requisitos para inscripción:</h2>
-  <h2 class="text-primary mb-4" id="typewriter"></h2>
+  <h2 class="text-primary mb-3" id="typewriter"></h2>
+  <p class="fs-5 mb-1 text-body">-Mayor de 16 años turno tarde.</p>
   <p class="fs-5 mb-1 text-body">-Mayor de 16 años turno tarde.</p>
   <p class="fs-5 mb-1 text-body">-Mayor de 18 años turno noche.</p>
   <p class="fs-5 mb-1 text-body">-Estudios primarios completos.</p>
 </div>
 <div class="wrapper-local">
   <h2>Documentación a presentar:</h2>
-  <h2 class="text-primary mb-4" id="typewriter"></h2>
+  <h2 class="text-primary mb-3" id="typewriter"></h2>
   <p class="fs-5 mb-1 text-body">-Fotocopia de DNI.</p>
   <p class="fs-5 mb-1 text-body">-Fotocopia de Acta de Nacimiento.</p>
   <p class="fs-5 mb-1 text-body">-Fotocopia de CUIL.</p>
   <p class="fs-5 mb-1 text-body">-Certificado de estudios primarios o superiores.</p>
   <p class="fs-5 mb-1 text-body">-Apto médico.</p>
+</div>
+<div class="wrapper-local">
+  <h2>Horario de cursado turno tarde:</h2>
+  <h2 class="text-primary mb-3" id="typewriter"></h2>
+  <p class="fs-5 mb-1 text-body">-Lunes a viernes de 14:00 a 16:00 hs.</p>
+  <p class="fs-5 mb-1 text-body">-Lunes a viernes de 16:00 a 18:00 hs. Articulación con CEBJA N°3-005.</p>  
+</div>
+<div class="wrapper-local">
+  <h2>Horario de cursado turno noche:</h2>
+  <h2 class="text-primary mb-3" id="typewriter"></h2>
+  <p class="fs-5 mb-1 text-body">-Lunes a viernes de 20:00 a 23:00 hs.</p>   
 </div>
 
 <div class="mt-4 text-center">
@@ -250,62 +273,80 @@
 <!--========================================================== -->
 
 <div class="container  border-top border-primary  " style="max-width: 500px" id="contenedor-formulario">
-
   <div class="text-center mb-4" id="titulo-formulario">
     <div ><img src="assets/img/support.png" alt="" class="img-fluid ps-5"></div><br>
     <h2>Pre-inscribite</h2>      
   </div> 
-
-  <form autocomplete="off" [formGroup]="formFilter"  novalidate> 
-
+  <form autocomplete="off" [formGroup]="formFilter"  novalidate>     
     <div class="mb-3">            
-      <input type="input" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre y apellido"
-      [ngClass]="{'is-invalid': isValidField('nombre')}">
+      <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre y apellido"
+      onkeydown="return /[a-z, ]/i.test(event.key)">
+      <div *ngIf="formFilter.get('nombre')?.touched && formFilter.get('nombre')?.errors?.['required']"
+      class="alert alert-danger">El nombre es campo obligatorio</div>   
+      <div *ngIf="formFilter.get('nombre')?.touched && formFilter.get('nombre')?.errors?.['minlength']"
+      class="alert alert-danger">El nombre debe tener mínimo 5 caracteres</div>
     </div>
 
     <div class="mb-3">            
       <input type="input" class="form-control" id="dni" formControlName="dni" placeholder="Ingresa DNI sin puntos"
-      [ngClass]="{'is-invalid': isValidField('dni')}">
+      oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+      <div *ngIf="formFilter.get('dni')?.touched && formFilter.get('dni')?.errors?.['required']"
+      class="alert alert-danger">El DNI es campo obligatorio</div>   
+      <div *ngIf="formFilter.get('dni')?.touched && formFilter.get('dni')?.errors?.['minlength']"
+      class="alert alert-danger">El DNI debe tener mínimo 8 caracteres</div>
     </div>
+
     <div class="mb-3">            
       <input type="input" class="form-control" id="edad" formControlName="edad" placeholder="Edad"
-      [ngClass]="{'is-invalid': isValidField('edad')}">  
-    </div>
-    <div class="mb-3">            
-      <input type="input" class="form-control" id="domicilio" formControlName="domicilio" placeholder="Domicilio"
-      [ngClass]="{'is-invalid': isValidField('domicilio')}">
+      oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+      <div *ngIf="formFilter.get('edad')?.touched && formFilter.get('edad')?.errors?.['required']"
+      class="alert alert-danger">La edad es campo obligatoria y mayor de 16 años</div>   
+      <div *ngIf="formFilter.get('edad')?.touched && formFilter.get('edad')?.errors?.['minlength']"
+      class="alert alert-danger">La edad debe tener mínimo 2 caracteres y mayor de 16 años</div>  
     </div>
 
-        <div class= "mb-3">           
-          <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email"
-          [ngClass]="{'is-invalid': isValidField('email')}">
-        </div>
+    <div class="mb-3">            
+      <input type="input" class="form-control" id="domicilio" formControlName="domicilio" placeholder="Domicilio">
+      <div *ngIf="formFilter.get('domicilio')?.touched && formFilter.get('domicilio')?.errors?.['required']"
+      class="alert alert-danger">El domicilio es campo obligatorio</div>   
+    </div>
+
+    <div class= "mb-3">           
+      <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
+      <div *ngIf="formFilter.get('email')?.touched && formFilter.get('email')?.errors?.['required']"
+      class="alert alert-danger">El email es campo obligatorio</div>
+      <div *ngIf="formFilter.get('email')?.touched && formFilter.get('email')?.errors?.['email']"
+      class="alert alert-danger">El email debe ser correcto ej: user@gmail.com</div>   
+    </div>
     
       
-        <div class="mb-3">
-          <input type="input" class="form-control" id="telefono" formControlName="telefono" placeholder="Teléfono"
-          [ngClass]="{'is-invalid': isValidField('telefono')}">
-        </div>
+    <div class="mb-3">
+      <input type="input" class="form-control" id="telefono" formControlName="telefono" placeholder="Teléfono"
+      oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+      <div *ngIf="formFilter.get('telefono')?.touched && formFilter.get('telefono')?.errors?.['required']"
+      class="alert alert-danger">El teléfono es campo obligatorio</div>  
+      <div *ngIf="formFilter.get('telefono')?.touched && formFilter.get('telefono')?.errors?.['minlength']"
+      class="alert alert-danger">El n° de teléfono debe tener mínimo 10 caracteres</div> 
+    </div>
 
-      <div class="mb-3">
-          
+    <div class="mb-3">          
         <select type="select" class="form-select form-select-mb-3"  formControlName="especialidad" [ngClass]="{'is-invalid': isValidField('especialidad')}">
           <option value="" disabled selected>Elige una especialidad y turno</option>
           <option value="Mecánica-Turno Tarde">Mecánica-Turno Tarde</option>
           <option value="Soldadura-Turno Tarde">Soldadura-Turno Tarde</option>
           <option value="Carpintería-Turno Tarde">Carpintería-Turno Tarde</option>
           <option value="Soldadura-Turno Noche">Soldadura-Turno Noche</option>
-          <option value="Instalaciones Sanitarias-Turno Noche">Instalaciones Sanitarias-Turno Noche</option>
+          <option value="Instalaciones Sanitarias y Gas-Turno Noche">Montador Instalaciones Sanitarias y Gas-Turno Noche</option>
           <option value="Mecánica-Turno Noche">Mecánica-Turno Noche</option>            
           <option value="Operador PC-Turno Noche">Operador PC-Turno Noche</option>
           <option value="Montador Electricista-Turno Noche">Montador Electricista-Turno Noche</option>
           <option value="Electricidad Automotor-Turno Noche">Electricidad Automotor-Turno Noche</option>
         </select>
-      </div>
+    </div>
 
-      <div class="mb-3">
+    <div class="mb-3">
         <button type="button" class=" btn btn-primary w-100 fs-5" [disabled]="formFilter.invalid" (click)="onSubmit()">Enviar</button>
-      </div>
+    </div>
   </form>
   </div>
 

@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FirebaseAlumnoComponent } from './firebase-alumno/firebase-alumno.component';
 import { FirebaseListComponent } from './firebase-list/firebase-list.component';
+import { FirebaseList2Component } from './firebase-list2/firebase-list2.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FirebaseListComponent } from './firebase-list/firebase-list.component';
     AlumnosComponent,
     FirebaseAlumnoComponent,
     FirebaseListComponent,
+    FirebaseList2Component,
   
   ],
   imports: [

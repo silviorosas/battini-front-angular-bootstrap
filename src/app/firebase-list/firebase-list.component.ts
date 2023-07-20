@@ -25,25 +25,41 @@ export class FirebaseListComponent implements OnInit {
     })
   }
 
- async deleteItem(item:any){
-  let answer = await Swal.fire({
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
-}).then((res) => {
-  if (res.isConfirmed) {
-    Swal.fire(
-      'Deleted!',
-      'Your file has been deleted.',
-      'success'
-    )
+async deleteItem2(item:any){
+  Swal.fire({
+    title: 'Seguro desea borrar?',
+    text: `El registro será eliminado`,
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí,eliminarlo!'
+  }).then((result) => {
+    if (result.value) {
+      const res = this.service.deleteItem(item);//para eliminar 
+     
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
+    }
+  })
+}
+
+public searchCurso(key: string): void {
+  console.log(key);
+  const results: any[] = [];
+  for (const curso of this.items) {
+    if (curso.especialidad.toLowerCase().indexOf(key.toLowerCase()) !== -1
+    ) {
+      results.push(curso);
+    }
   }
-})  
-const res = await this.service.deleteItem(item);//para eliminar 
+  this.items = results;
+  if (results.length === 0 || !key) {
+    this.getItems();
+  }
 }
 
 
