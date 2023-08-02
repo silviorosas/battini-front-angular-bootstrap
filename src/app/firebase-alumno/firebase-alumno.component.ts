@@ -17,7 +17,7 @@ export class FirebaseAlumnoComponent implements OnInit {
   ngOnInit(): void {
      //Defino formulario como una propiedad y valido que los campos son requeridos:
    this.formFilter = this.fb.group({      
-    nombre: ['', [Validators.required, Validators.minLength(5),Validators.pattern('^[a-z ]*$')]],
+    nombre: ['', [Validators.required, Validators.minLength(5),Validators.pattern('^[a-zA-Z ]*$')]],
     dni: ['', [Validators.required, Validators.minLength(8),Validators.pattern('^[0-9]*$')]],
     edad: ['', [Validators.required, Validators.minLength(2), Validators.min(16),Validators.pattern('^[0-9]*$')]],  
     domicilio: ['', [Validators.required,Validators.minLength(5)]],
